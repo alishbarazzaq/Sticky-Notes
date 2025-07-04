@@ -1,0 +1,274 @@
+/* ========== GLOBAL STYLES ========== */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: url("background.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* ========== DARK THEME FIXES ========== */
+.app.dark-theme .note-menu {
+  background-color: #2e2e2e;
+  border-color: #444;
+}
+
+.app.dark-theme .note-menu li {
+  color: #f0f0f0;
+}
+
+.app.dark-theme .note-menu li:hover {
+  background-color: #444;
+}
+
+.app.dark-theme .popup-content {
+  background-color: #333;
+  color: #f0f0f0;
+}
+
+.app {
+  max-width: 900px;
+  width: 95%;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
+  margin-top: 20px;
+}
+
+.app.dark-theme {
+  background: #1e1e1e;
+  color: white;
+}
+
+/* ========== HEADER STYLING ========== */
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* ========== NOTE CONTROLS ========== */
+.note-controls {
+  margin-bottom: 25px;
+}
+
+#noteInput {
+  width: 100%;
+  height: 80px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  resize: none;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.control-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+#noteColor,
+#addNoteBtn {
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  border: none;
+}
+
+#addNoteBtn {
+  background-color: #ffcc00;
+  cursor: pointer;
+}
+
+#addNoteBtn:hover {
+  background-color: #e6b800;
+}
+
+/* ========== NOTES GRID ========== */
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+/* ========== INDIVIDUAL NOTE STYLING ========== */
+.note {
+  background-color: #fffaa8;
+  padding: 15px;
+  border-radius: 12px;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  color: #000 !important;
+}
+
+.note p {
+  margin: 0;
+}
+
+/* ========== 3-DOT MENU BUTTON & DROPDOWN FIXED ========== */
+.note .note-header {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.menu-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: inherit;
+  padding: 4px;
+  border-radius: 5px;
+}
+
+.menu-btn:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.app.dark-theme .menu-btn {
+  color: #ddd;
+}
+
+.note-menu {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+}
+
+.app.dark-theme .note-menu {
+  background-color: #2e2e2e;
+  border-color: #444;
+}
+
+.note-menu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.note-menu li {
+  padding: 8px 14px;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.note-menu li:hover {
+  background-color: #eee;
+}
+
+.app.dark-theme .note-menu li {
+  color: #f0f0f0;
+}
+
+.app.dark-theme .note-menu li:hover {
+  background-color: #444;
+}
+
+/* ========== POPUP MODAL ========== */
+.popup {
+  position: fixed;
+  display: none;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  backdrop-filter: blur(2px);
+  background-color: rgba(0, 0, 0, 0.3);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  color: #333;
+  max-width: 300px;
+  text-align: center;
+}
+
+.popup-content button {
+  margin-top: 10px;
+  background-color: #5cb85c;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* ========== RESPONSIVE FIXES ========== */
+@media (max-width: 600px) {
+  .app {
+    padding: 15px;
+  }
+
+  .app-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .logo {
+    font-size: 1.2rem;
+  }
+
+  .control-row {
+    flex-direction: column;
+    gap: 10px;
+    align-items: stretch;
+  }
+
+  #addNoteBtn,
+  #noteColor {
+    width: 100%;
+  }
+
+  .notes-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .note {
+    font-size: 14px;
+  }
+
+  .note-menu {
+    right: 5px;
+  }
+}

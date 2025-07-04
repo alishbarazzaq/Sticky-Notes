@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sticky Notes</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="app-header">
+      <div class="logo">
+        📝 <span>Sticky Notes</span>
+      </div>
+      <button id="toggleThemeBtn" class="theme-toggle">🌗</button>
+    </header>
+
+    <div class="note-controls">
+      <textarea id="noteInput" placeholder="Write your note here..."></textarea>
+      <div class="control-row">
+        <select id="noteColor">
+          <option value="#fffaa8">Yellow</option>
+          <option value="#a8ffcb">Green</option>
+          <option value="#a8d8ff">Blue</option>
+          <option value="#f8a8ff">Pink</option>
+        </select>
+        <button id="addNoteBtn">Add Note</button>
+      </div>
+    </div>
+
+    <div id="notesContainer" class="notes-grid"></div>
+
+    <div id="popupModal" class="popup">
+      <div class="popup-content">
+        <p id="popupMessage">Your message here...</p>
+        <button onclick="closePopup()">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="test.js"></script>
+</body>
+</html>
